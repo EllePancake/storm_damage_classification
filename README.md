@@ -1,10 +1,9 @@
-# storm_damage_classification
+# Storm Damage Classification using ResNet50
 
-
-
+## Overview
+This project applies **deep learning techniques** to classify **storm damage** using **satellite imagery**. It utilizes **ResNet50** and **transfer learning** to automate the assessment of property damage, aligning with CAPE Analytics' mission of **computer vision-driven property intelligence.**
 
 ## **Folder & File Structure**
-
 ```
 📦 modeling
  ┣ 📂 experiments
@@ -38,9 +37,6 @@
  ┣ 📜 utils.py                 # Helper functions
  ┗ 📜 README.md                # Project documentation
 ```
-
----
-
 ## **Description of Files**
 | **File** | **Description** |
 |----------|----------------|
@@ -64,3 +60,33 @@
 | `README.md` | Project overview & instructions |
 
 ---
+
+## 🚀 Model Variants
+| Model Version | Key Changes |
+|--------------|------------|
+| **Model v1** | Baseline ResNet50 (pretrained, frozen base, no fine-tuning) |
+| **Model v2** | Enables fine-tuning, lower learning rate |
+| **Model v3** | Uses AdamW optimizer, higher dropout (0.3) for regularization |
+| **Model v4** | Adds learning rate scheduling (cosine decay), stronger regularization |
+
+## 📊 Dataset
+- **Images**: Preprocessed satellite imagery of storm-affected areas.
+- **Labels**: `damage` vs. `no_damage`
+- **Preprocessing Steps**: (Details to be added after training)
+
+## 🔧 Training Pipeline
+1. **Data Preprocessing & Augmentation** (`utils_data_loader.py`)
+2. **Model Training** (`train_v1.py`, `train_v2.py`, etc.)
+3. **Evaluation & Visualization** (`evaluation.py`, `utils_visualization.py`)
+4. **Model Interpretation (Grad-CAM)** (`interpret.py`)
+
+## 📈 Expected Results
+- Model **performance metrics** (accuracy, F1-score) will be added **after training is complete**.
+- The best-performing model will be identified and compared across versions.
+
+## 📌 Next Steps
+- Train all models and log performance.
+- Analyze results using `compare_models.ipynb`.
+---
+
+This project demonstrates advanced **deep learning for geospatial analysis** and is structured to be scalable, reproducible, and modular. 
